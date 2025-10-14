@@ -1,0 +1,50 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "DenganDI",
+      "request": "launch",
+      "mainClass": "DenganDI",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "TanpaDI",
+      "request": "launch",
+      "mainClass": "TanpaDI",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-DemoApplication<demo>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.demo.DemoApplication",
+      "projectName": "demo",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=50652 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=demo"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-Demo1Application<demo1>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.demo1.Demo1Application",
+      "projectName": "demo1",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=50615 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=demo1"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-InventoryApplication<inventory>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.app.inventory.InventoryApplication",
+      "projectName": "inventory",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
