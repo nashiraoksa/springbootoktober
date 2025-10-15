@@ -45,6 +45,16 @@
       "projectName": "inventory",
       "args": "",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-MarketApplication<market>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.inixindo.market.MarketApplication",
+      "projectName": "market",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
 }
