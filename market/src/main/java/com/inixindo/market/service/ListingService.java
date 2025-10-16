@@ -1,7 +1,12 @@
 package com.inixindo.market.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
+import com.inixindo.market.dto.ListingRequest;
+import com.inixindo.market.dto.ListingResponse;
 import com.inixindo.market.model.Listing;
 import com.inixindo.market.repository.ListingRepository;
 
@@ -16,18 +21,31 @@ public class ListingService {
 
     // fungsi tambah data
     @Transactional
-    public String tambah(Listing request){
+    public String tambah(ListingRequest request){
         Listing baru = new Listing();
-        baru.setJudul(request.getJudul());
-        baru.setDeskripsi(request.getDeskripsi());
-        baru.setHarga(request.getHarga());
-        baru.setKategori(request.getKategori());
-        baru.setUsername(request.getUsername());
-        baru.setNohp(request.getNohp());
+        baru.setJudul(request.judul());
+        baru.setDeskripsi(request.deskripsi());
+        baru.setHarga(request.harga());
+        baru.setKategori(request.kategori());
+        baru.setUsername(request.username());
+        baru.setNohp(request.nohp());
 
         // simpan
         repo.save(baru);
 
         return "berhasil input data";
+    }
+
+    // ambil data listing
+    // @Transactional
+    // public List<Listing> tampilListing(){
+    //     return repo.findAll();
+    // }
+
+    @Transactional
+    public List<ListingResponse> tampilListing(){
+        List<Listing> listing = repo.findAll();
+
+        return listing.stream().map(val -> new ListingResponse(val.getJudul(), val.getDeskripsi(), val.getHarga())).toList();
     }
 }
