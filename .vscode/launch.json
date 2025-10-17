@@ -55,6 +55,16 @@
       "projectName": "market",
       "args": "",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-SocialApplication<social>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "id.co.bpddiy.social.SocialApplication",
+      "projectName": "social",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
 }
