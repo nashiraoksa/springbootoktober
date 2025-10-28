@@ -1,5 +1,6 @@
 package id.co.bpddiy.social.dto;
 
+import id.co.bpddiy.social.model.User;
 import id.co.bpddiy.social.model.User.Role;
 
 public class UserDto {
@@ -7,6 +8,15 @@ public class UserDto {
     private String username;
     private String email;
     private String bio;
+    private String profileImageUrl;
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
+    }
+
     private Role role = Role.USER;
 
     public UserDto() {
@@ -58,6 +68,19 @@ public class UserDto {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    // START HERE
+    
+    public static UserDto fromEntity(User user) {
+        UserDto dto = new UserDto();
+        dto.setId(user.getId());
+        dto.setUsername(user.getUsername());
+        dto.setEmail(user.getEmail());
+        dto.setBio(user.getBio());
+        dto.setProfileImageUrl(user.getProfileImageUrl());
+        dto.setRole(user.getRole());
+        return dto;
     }
 
 }
